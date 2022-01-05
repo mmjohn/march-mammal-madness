@@ -8,31 +8,31 @@ library(tidyverse)
 # track only winner ranks in order from top to bottom
 
 example_tricksy <- list(
-  tricksy_round1 = c(1, 8, 12, 4, 6, 14, 7, 2),
-  tricksy_round2 = c(1, 4, 6, 7),
-  tricksy_round3 = c(4, 7),
-  tricksy_winner = 4
+  round1 = c(1, 8, 12, 4, 6, 14, 7, 2),
+  round2 = c(1, 4, 6, 7),
+  round3 = c(4, 7),
+  winner = 4
 )
 
 example_red <- list(
-  red_round1 = c(16, 9, 5, 4, 11, 3, 7, 2),
-  red_round2 = c(9, 5, 3, 2),
-  red_round3 = c(9, 3),
-  red_winner = 3
+  round1 = c(16, 9, 5, 4, 11, 3, 7, 2),
+  round2 = c(9, 5, 3, 2),
+  round3 = c(9, 3),
+  winner = 3
 )
 
 example_myths <- list(
-  myths_round1 = c(16, 9, 5, 4, 6, 3, 10, 15),
-  myths_round2 = c(9, 4, 3, 10),
-  myths_round3 = c(9, 10),
-  myths_winner = 10
+  round1 = c(16, 9, 5, 4, 6, 3, 10, 15),
+  round2 = c(9, 4, 3, 10),
+  round3 = c(9, 10),
+  winner = 10
 )
 
 example_sea <- list(
-  sea_round1 = c(16, 9, 12, 13, 6, 14, 7, 15),
-  sea_round2 = c(9, 13, 6, 7),
-  sea_round3 = c(13, 7),
-  sea_winner = 7
+  round1 = c(16, 9, 12, 13, 6, 14, 7, 15),
+  round2 = c(9, 13, 6, 7),
+  round3 = c(13, 7),
+  winner = 7
 )
 
 example_wild <- list(winner = "chipmunk")
@@ -42,43 +42,34 @@ example_finals <- list(
   winner = "myths_10"
 )
 
-#### Wild Card
-
-#### Round 1 - Red, in Fur
-
-#### Round 1 - Tricksy Taxonomy
-
-
-
-
 # results bracket
 
 result_tricksy <- list(
-  tricksy_round1 = c(1, 8, 12, 13, 6, 3, 7, 2),
-  tricksy_round2 = c(1, 12, 3, 2),
-  tricksy_round3 = c(1, 3),
-  tricksy_winner = 3
+  round1 = c(1, 8, 12, 13, 6, 3, 7, 2),
+  round2 = c(1, 12, 3, 2),
+  round3 = c(1, 3),
+  winner = 3
 )
 
 result_red <- list(
-  red_round1 = c(1, 8, 5, 4, 6, 3, 7, 2),
-  red_round2 = c(1, 5, 3, 2),
-  red_round3 = c(1, 2),
-  red_winner = 1
+  round1 = c(1, 8, 5, 4, 6, 3, 7, 2),
+  round2 = c(1, 5, 3, 2),
+  round3 = c(1, 2),
+  winner = 1
 )
 
 result_myths <- list(
-  myths_round1 = c(1, 8, 5, 4, 6, 3, 7, 15),
-  myths_round2 = c(1, 5, 6, 7),
-  myths_round3 = c(1, 6),
-  myths_winner = 1
+  round1 = c(1, 8, 5, 4, 6, 3, 7, 15),
+  round2 = c(1, 5, 6, 7),
+  round3 = c(1, 6),
+  winner = 1
 )
 
 result_sea <- list(
-  sea_round1 = c(1, 8, 5, 4, 6, 3, 7, 2),
-  sea_round2 = c(1, 5, 6, 2),
-  sea_round3 = c(1, 2),
-  sea_winner = 1
+  round1 = c(1, 8, 5, 4, 6, 3, 7, 2),
+  round2 = c(1, 5, 6, 2),
+  round3 = c(1, 2),
+  winner = 1
 )
 
 result_wild <- list(winner = "vole")
@@ -92,19 +83,43 @@ result_finals <- list(
 
 
 
+setdiff(c(1,2,5), c(1,2,4))
+intersect(c(1,2,5), c(1,2,4))
+
+length(intersect(c(1,2,5), c(1,2,4)))
+length(
+  intersect(
+    example_tricksy$round1,
+    result_tricksy$round1
+  )
+)
+
+
+round1_score_fxn <- function(bracket, result) {
+  num_correct <- length(
+    intersect(bracket$round1, result$round1)
+  )
+  
+  round_pts <- num_correct*1
+  
+  return(round_pts)
+}
+
+round1_score_fxn(example_tricksy, result_tricksy)
+
+round1_score_fxn(example_red, result_red)
+
+round1_score_fxn(example_myths, result_myths)
+
+round1_score_fxn(example_sea, result_sea)
 
 
 
+#### Wild Card
 
+#### Round 1 - Red, in Fur
 
-
-
-
-
-
-
-
-
+#### Round 1 - Tricksy Taxonomy
 
 #### Round 1 - Of Myths and Monsters
 
