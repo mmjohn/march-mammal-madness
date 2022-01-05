@@ -30,9 +30,16 @@ example_myths <- list(
 
 example_sea <- list(
   sea_round1 = c(16, 9, 12, 13, 6, 14, 7, 15),
-  sea_round2 = c(),
-  sea_round3 = c(),
-  sea_winner = 
+  sea_round2 = c(9, 13, 6, 7),
+  sea_round3 = c(13, 7),
+  sea_winner = 7
+)
+
+example_wild <- list(winner = "chipmunk")
+
+example_finals <- list(
+  final = c("red_3", "myths_10"),
+  winner = "myths_10"
 )
 
 #### Wild Card
@@ -44,8 +51,42 @@ example_sea <- list(
 
 
 
+# results bracket
 
+result_tricksy <- list(
+  tricksy_round1 = c(1, 8, 12, 13, 6, 3, 7, 2),
+  tricksy_round2 = c(1, 12, 3, 2),
+  tricksy_round3 = c(1, 3),
+  tricksy_winner = 3
+)
 
+result_red <- list(
+  red_round1 = c(1, 8, 5, 4, 6, 3, 7, 2),
+  red_round2 = c(1, 5, 3, 2),
+  red_round3 = c(1, 2),
+  red_winner = 1
+)
+
+result_myths <- list(
+  myths_round1 = c(1, 8, 5, 4, 6, 3, 7, 15),
+  myths_round2 = c(1, 5, 6, 7),
+  myths_round3 = c(1, 6),
+  myths_winner = 1
+)
+
+result_sea <- list(
+  sea_round1 = c(1, 8, 5, 4, 6, 3, 7, 2),
+  sea_round2 = c(1, 5, 6, 2),
+  sea_round3 = c(1, 2),
+  sea_winner = 1
+)
+
+result_wild <- list(winner = "vole")
+
+result_finals <- list(
+  final = c("red_1", "myths_1"),
+  winner = "red_1"
+)
 
 
 
